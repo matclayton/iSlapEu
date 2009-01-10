@@ -492,7 +492,7 @@ def InstallModelForm():
   """Replace Django ModelForm with the AppEngine ModelForm."""
   # This MUST happen as early as possible, but after any auth model patching.
   from google.appengine.ext.db import djangoforms as aeforms
-  from django import newforms as forms
+  from django import forms
   forms.ModelForm = aeforms.ModelForm
 
   # Extend ModelForm with support for EmailProperty

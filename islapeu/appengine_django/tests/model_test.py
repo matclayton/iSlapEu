@@ -21,7 +21,7 @@ import unittest
 
 from django import VERSION
 from django.db.models import get_models
-from django import newforms as forms
+from django import forms
 
 from google.appengine.ext.db import djangoforms
 from google.appengine.ext import db

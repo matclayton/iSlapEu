@@ -20,7 +20,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Your Name', 'your_email@domain.com'),
+     ('Mat Clayton', 'mat@islap.eu'),
 )
 
 MANAGERS = ADMINS
@@ -98,6 +98,7 @@ TEMPLATE_DIRS = (
 INSTALLED_APPS = (
      'appengine_django',
      'django.contrib.auth',
+     'slap',
 #    'django.contrib.contenttypes',
 #    'django.contrib.sessions',
 #    'django.contrib.sites',
