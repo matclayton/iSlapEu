@@ -1,5 +1,19 @@
 {% extends "base.html" %}
 
 {% block maincontent %}
+Home Page
 
+{{ user.GetProfileImageUrl }}
+
+<form action='' method='POST'>
+	{{ form.slaper.errors }}
+	Slaper: {{ form.slaper }}<br/>
+	
+	{{ form.slapee.errors }}
+	Slapee: {{ form.slapee }}<br/>
+	
+	{{ form.reason.errors }}
+	Reason: {{ form.reason }}	
+	<input type='submit'/>
+</form>
 {% endblock maincontent %}

@@ -17,5 +17,8 @@ from slap.views import *
 
 urlpatterns = patterns('',
     # Example:
-    url(r'^$', home, name='home' ),
+    (r'^$', home ),
+    (r'^about/$', about ),
+    (r'^terms/$', terms ),
+    (r'^(?P<username>[-\w]+)/$', slap ),
 )

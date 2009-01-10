@@ -14,6 +14,9 @@
 
 # Django settings for google-app-engine-django project.
 
+SLAPS_PER_PAGE = 10
+
+
 import os
 
 DEBUG = True
