@@ -78,7 +78,7 @@ input {
 	border: none;
 	height: 30px;
 	width: 500px;
-	margin: 13px 0 20px 0px;
+	margin: 13px 0 2px 0px;
 	font-size: 26px;
 	font-weight: bold;
 	font-family: Georgia, Arial;
@@ -86,9 +86,11 @@ input {
 }
 
 .error {
-	font-size: 16px;
+	font-size: 14px;
 	color: red;
 	font-weight: bold;
+	margin: 0 0 3px 0;
+	display: ;
 }
 
 #slapee {
