@@ -9,8 +9,8 @@ class User(BaseModel):
     modified_at = db.DateTimeProperty(auto_now=True)
 
 class Slap(BaseModel):
-    slaper = db.StringProperty(multiline=False)
-    slapee = db.StringProperty(multiline=False)
+    slaper = db.StringProperty(multiline=False, required=True)
+    slapee = db.StringProperty(multiline=False, required=True)
 
     reason = db.StringProperty(multiline=True)
 
