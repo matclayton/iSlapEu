@@ -40,22 +40,27 @@ input:visited { outline: none; }
 	margin-top: -170px;
 }
 
-input#bird-btn {
+input#slaphiddensubmit {
+	display: none;
+}
+
+#bird-btn {
 	width: 500px;
 	background: url(../images/bird-btn.png) no-repeat top left;
 	height: 500px;	
 	cursor: pointer;
+	display: block;
 }
 
-input#bird-btn:hover {
+#bird-btn:hover {
 	background-position: 0% 50%;
 }
 
-input#bird-btn:active {
+#bird-btn:active {
 	background-position: bottom left;
 }
 
-input#bird-btn:visited {
+#bird-btn:visited {
 	outline: none;
 	border: none;
 }
@@ -63,9 +68,14 @@ input#bird-btn:visited {
 h1 {
 	font-weight: bold;
 	font-size: 100px;
-	padding: 50px 0 30px 0;
+	margin: 50px 0 30px 0;
  	font-family: Georgia;
+	text-indent: -9999px; /* Hide text, keep for SEO */
+	background: url(../images/logo.png) no-repeat top left;
+	width: 500px;
+	height: 120px;
 }
+
 
 h2 {
 	font-weight: bold;
@@ -78,7 +88,7 @@ input {
 	border: none;
 	height: 30px;
 	width: 500px;
-	margin: 13px 0 2px 0px;
+	margin: 13px 0 20px 0px;
 	font-size: 26px;
 	font-weight: bold;
 	font-family: Georgia, Arial;
@@ -90,7 +100,7 @@ input {
 	font-size: 14px;
 	color: red;
 	font-weight: bold;
-	margin: 0 0 3px 0;
+	margin: -15px 0 0 0;
 }
 
 #id_slapee {
