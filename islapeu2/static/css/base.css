@@ -1,9 +1,119 @@
-
+/* SITE WIDE */
 body {
 	background: white;	
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 26px;
+	color: #323131;
 }
 
 .wrapper {
 	width: 1000px;
 	margin: 0 auto;
+}
+
+:focus { outline: none; }
+:active { outline: none; }
+
+
+/* HOME PAGE */
+
+.homebg {
+	background: url(../images/bird-bg.png) no-repeat top right;
+	width: 1000px;
+	height: auto;
+}
+
+.left-col {
+	float: left;
+	width: 500px;
+}
+
+.right-col {
+	float: right;
+	width: 500px;
+	margin-top: -170px;
+}
+
+input#bird-btn {
+	width: 500px;
+	background: url(../images/bird-btn.png) no-repeat top left;
+	height: 500px;	
+	cursor: pointer;
+}
+
+input#bird-btn:hover {
+	background-position: 0% 50%;
+}
+
+input#bird-btn:active {
+	background-position: bottom left;
+}
+
+input#bird-btn:visited {
+	outline: none;
+	border: none;
+}
+
+h1 {
+	font-weight: bold;
+	font-size: 100px;
+	padding: 50px 0 30px 0;
+}
+
+h2 {
+	font-weight: bold;
+	color: #0b78c2;
+	margin-bottom: -10px;
+}
+
+input {
+	background: #e7e6e6;
+	border: none;
+	height: 30px;
+	width: 500px;
+	margin: 13px 0 20px 0px;
+	font-size: 26px;
+	font-weight: bold;
+	font-family: Georgia, Arial;
+	color: #323131;
+}
+
+#slapee {
+	background: #e7e6e6 url(../images/at-sign.png) no-repeat top left;
+	padding: 0 0 0 35px;
+	width: 465px;
+}
+
+h2 span.reason-helper {
+	font-size: 16px;
+	color:#bdbcbc;
+}
+
+#reason {
+	background: #e7e6e6;
+	border: none;
+	height: 30px;
+	width: 490px;
+	margin: 13px 0 20px 0px;
+	font-size: 26px;
+	font-weight: bold;
+	font-family: Georgia, Arial;
+	color: #323131;
+	height: 100px;
+	padding: 5px;
+}
+
+.username-left-col {
+	float: left;
+	width: 250px;
+}
+
+#twitter-username {
+	width: 230px;
+	padding: 0 5px;
+}
+
+#twitter-password {
+	width: 240px;
+	padding: 0 5px;
 }

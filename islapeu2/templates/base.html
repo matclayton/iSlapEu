@@ -5,20 +5,45 @@
 		<meta content="en-us" http-equiv="Content-Language"/>
 		<meta content="I, Slap, eU, twitter, slap, slapping" name="Keywords"/>
 		<meta content="I Slap eU. You slap me. We all slap people on twitter for free" name="Description"/>
-		<link rel="icon" href="#" type="image/png" />
+		<link rel="icon" href="../static/images/favicon.png" type="image/png" />
 		<title>I Slap eU  {% block title %}{% endblock %}</title>
 
-		<link type="text/css" rel="stylesheet" href="/static/css/reset.css" />		
-		<link type="text/css" rel="stylesheet" href="/static/css/base.css" />
-		<script type="text/javascript" src="/static/js/jquery-1.2.6.js"></script>
+		<link type="text/css" rel="stylesheet" href="../static/css/reset.css" />		
+		<link type="text/css" rel="stylesheet" href="../static/css/base.css" />
+		<script type="text/javascript" src="../static/js/jquery-1.2.6.js"></script>
 	</head>
 	<body>
 		<div class="wrapper">
-			
-			
+				<h1>I Slap eU!</h1>
+				
+				<form id="homepage-form" action="">
+					<div class="left-col">
+						<h2>I want to slap</h2>
+						<input type="text" value="" id="slapee"/>
+						
+						<h2>Reason <span class="reason-helper">up to 160 characters</span></h2>
+						<textarea id="reason" name="status" rows="2" cols="40"></textarea>
+				
+						<div class="username-left-col">
+						<h2>Twitter username</h2>
+						<input type="text" value="" id="twitter-username"/>
+						</div>
+						
+						<div class="">
+						<h2>Twitter password</h2>
+						<input type="password" value="" id="twitter-password"/>
+						</div>	
 
+					</div>
+					<div class="right-col">
+						<input type="submit" value"" id="bird-btn" />
+					</div>
+				</form>		
+
+		
+<!--
 		{% block maincontent %}{% endblock maincontent %}    
-
+-->
 
 		</div>		
 	</body>
