@@ -1,6 +1,36 @@
 {% extends "base.html" %}
 
 {% block maincontent %}
+
+<h1>I Slap eU!</h1>
+
+<form id="homepage-form" action="">
+	<div class="left-col">
+		<h2>I want to slap</h2>
+		<input type="text" value="" id="slapee"/>
+		<p class="error">This field is required</p>
+		
+		<h2>Because... <span class="reason-helper">up to 160 characters</span></h2>
+		<textarea id="reason" name="status" rows="2" cols="40"></textarea>
+
+		<div class="username-left-col">
+		<h2>Twitter username</h2>
+		<input type="text" value="" id="twitter-username"/>
+		<p class="error">Username or password incorrect</p>
+		</div>
+		
+		<div class="">
+		<h2>Twitter password</h2>
+		<input type="password" value="" id="twitter-password"/>
+		</div>	
+
+	</div>
+	<div class="right-col">
+		<input type="submit" value"" id="bird-btn" />
+	</div>
+</form>	
+			
+<!--
 Home Page
 
 {{ user.GetProfileImageUrl }}
@@ -17,3 +47,4 @@ Home Page
 	<input type='submit'/>
 </form>
 {% endblock maincontent %}
+-->
