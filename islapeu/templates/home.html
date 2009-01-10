@@ -1,5 +1,16 @@
 {% extends "base.html" %}
 
+{% block extrahead %}
+
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$("#id_reason").elastic();
+		});
+	</script>
+
+{% endblock extrahead %}
+
+		
 {% block maincontent %}
 
 <h1>I Slap eU!</h1>
@@ -26,7 +37,11 @@
 
 	</div>
 	<div class="right-col">
-		<input type="submit" value"" id="bird-btn" />
+<!--		<input type="submit" value"" id="bird-btn" /> -->
+
+		<input type="submit" value"" id="slaphiddensubmit" />
+		<a href="" id="bird-btn" onclick="document.getElementById('homepage-form').submit(); return false;"></a>
+
 	</div>
 </form>	
 
