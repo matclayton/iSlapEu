@@ -8,9 +8,7 @@ import logging
 import twitter
 
 
-def home(request):
-    request.session['foo'] = 'bar'
-    
+def home(request):  
     form = FullSlapForm(data=request.POST or None)
     if request.method == 'POST' and form.is_valid():
         form.save()

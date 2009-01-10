@@ -85,15 +85,15 @@ input {
 	color: #323131;
 }
 
+
 .error {
 	font-size: 14px;
 	color: red;
 	font-weight: bold;
 	margin: 0 0 3px 0;
-	display: ;
 }
 
-#slapee {
+#id_slapee {
 	background: #e7e6e6 url(../images/at-sign.png) no-repeat top left;
 	padding: 0 0 0 35px;
 	width: 465px;
@@ -104,7 +104,7 @@ h2 span.reason-helper {
 	color:#bdbcbc;
 }
 
-#reason {
+#id_reason {
 	background: #e7e6e6;
 	border: none;
 	height: 30px;
@@ -123,12 +123,12 @@ h2 span.reason-helper {
 	width: 250px;
 }
 
-#twitter-username {
+#id_slaper {
 	width: 230px;
 	padding: 0 5px;
 }
 
-#twitter-password {
+#id_password {
 	width: 240px;
 	padding: 0 5px;
 }

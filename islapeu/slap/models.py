@@ -12,7 +12,7 @@ class Slap(BaseModel):
     slaper = db.StringProperty(multiline=False)
     slapee = db.StringProperty(multiline=False)
 
-    reason = db.StringProperty(multiline=False)
+    reason = db.StringProperty(multiline=True)
 
     created_at = db.DateTimeProperty(auto_now_add=True)
     modified_at = db.DateTimeProperty(auto_now=True)

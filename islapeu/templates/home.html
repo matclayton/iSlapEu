@@ -4,24 +4,25 @@
 
 <h1>I Slap eU!</h1>
 
-<form id="homepage-form" action="">
+<form id="homepage-form" action="" method='POST'>
 	<div class="left-col">
 		<h2>I want to slap</h2>
-		<input type="text" value="" id="slapee"/>
-		<p class="error">This field is required</p>
+		{{ form.slapee }}
+		{{ form.slapee.errors }}
 		
 		<h2>Because... <span class="reason-helper">up to 160 characters</span></h2>
-		<textarea id="reason" name="status" rows="2" cols="40"></textarea>
+		{{ form.reason }}
 
 		<div class="username-left-col">
 		<h2>Twitter username</h2>
-		<input type="text" value="" id="twitter-username"/>
+		{{ form.slaper }}
+		{{ form.errors }}
 		<p class="error">Username or password incorrect</p>
 		</div>
 		
 		<div class="">
 		<h2>Twitter password</h2>
-		<input type="password" value="" id="twitter-password"/>
+		{{ form.password }}
 		</div>	
 
 	</div>
@@ -29,22 +30,5 @@
 		<input type="submit" value"" id="bird-btn" />
 	</div>
 </form>	
-			
-<!--
-Home Page
 
-{{ user.GetProfileImageUrl }}
-
-<form action='' method='POST'>
-	{{ form.slaper.errors }}
-	Slaper: {{ form.slaper }}<br/>
-	
-	{{ form.slapee.errors }}
-	Slapee: {{ form.slapee }}<br/>
-	
-	{{ form.reason.errors }}
-	Reason: {{ form.reason }}	
-	<input type='submit'/>
-</form>
 {% endblock maincontent %}
--->
