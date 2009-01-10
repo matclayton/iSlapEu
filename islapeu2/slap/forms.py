@@ -13,7 +13,7 @@ class UserSlapForm(djangoforms.ModelForm):
         model = Slap
         exclude = ['created_at', 'modified_at', 'slapee']
     
-class FullSlapForm(djangoforms.ModelForm):  
+class FullSlapForm(djangoforms.ModelForm):    
     class Meta:
         model = Slap
         exclude = ['created_at', 'modified_at']
