@@ -11,12 +11,10 @@ class Slap(BaseModel):
         increment('slaps_received_%s' % self.slapee)
         return super(Slap, self).save()
     
-    slaper = db.StringProperty(multiline=False, required=True)
+    slaper = db.StringProperty(multiline=False)
     slapee = db.StringProperty(multiline=False, required=True)
     
+    reason = db.StringProperty(multiline=True)  
     slaper_image_url = db.StringProperty()
 
-    reason = db.StringProperty(multiline=True)
-
     created_at = db.DateTimeProperty(auto_now_add=True)
-    modified_at = db.DateTimeProperty(auto_now=True)

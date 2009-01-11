@@ -20,5 +20,6 @@ urlpatterns = patterns('',
     url(r'^$', home, name='home' ),
     url(r'^about/$', about, name='about' ),
     url(r'^terms/$', terms, name='terms' ),
+    url(r'^logout/$', logout, name='logout' ),
     url(r'^(?P<username>[-\w]+)/$', slap, name='slap' ),
 )
