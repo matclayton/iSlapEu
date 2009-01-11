@@ -155,7 +155,7 @@ h2 span.reason-helper {
 }
 
 #player-container {
-	margin: -100px 0 0 -9999px;
+
 }
 
 .logout-text {
@@ -236,8 +236,7 @@ h4 {
 }
 
 .slap-row h2 {
-	background: yellow;
-	margin: 0 0 0 5px;
+	padding: 0 0 0 5px;
 }
 
 .number-times {
@@ -245,7 +244,7 @@ h4 {
 }
 
 .slap-row p {
-	padding: 5px 5px 5px 52px;
+	padding: 5px 10px 5px 10px;
 	font-size: 16px;
 }
 
@@ -254,4 +253,14 @@ h4 {
 	height: 48px;
 	background: green;
 	float: left;
+}
+
+.slap-row-rightcol {
+	float: right;
+	width: 440px;
+}
+
+.ads {
+	width: 300px;
+	margin: 0 0 0 130px;
 }
