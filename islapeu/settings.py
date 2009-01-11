@@ -37,7 +37,7 @@ DATABASE_HOST = ''             # Set to empty string for localhost. Not used wit
 DATABASE_PORT = ''             # Set to empty string for default. Not used with sqlite3.
 
 # Email settings for sending outgoing email, very useful for debug information
-#EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = 'localhost'
 EMAIL_HOST_USER = 'team@islap.eu'
 #EMAIL_HOST_PASSWORD = '6N6335'
 #EMAIL_PORT = 587
