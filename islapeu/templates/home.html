@@ -2,10 +2,27 @@
 
 {% block extrahead %}
 
-	<script type="text/javascript">
-		$(document).ready(function () {
-			$("#id_reason").elastic();
+	<script type="text/javascript">  
+		AudioPlayer.setup("../static/swf/audioplayer.swf", {  
+		width: 400,
 		});
+	</script>
+	
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$("#id_reason").elastic();
+		
+		$("#bird-btn").click(function() {
+			AudioPlayer.embed("audioplayer_1", {  
+				soundFile: "/static/mp3/yep.mp3",  
+				autostart: "yes",
+			});
+			
+			$(this).delay(8000,function() {
+				$("#homepage-form").submit();
+			});
+		});
+		
 	</script>
 
 {% endblock extrahead %}
@@ -37,12 +54,13 @@
 
 	</div>
 	<div class="right-col">
-<!--		<input type="submit" value"" id="bird-btn" /> -->
-
 		<input type="submit" value"" id="slaphiddensubmit" />
-		<a href="" id="bird-btn" onclick="document.getElementById('homepage-form').submit(); return false;"></a>
-
+		<a href="" id="bird-btn"></a>
 	</div>
 </form>	
+
+<div id="player-container">	
+	<p id="audioplayer_1"></p>  
+</div>  
 
 {% endblock maincontent %}

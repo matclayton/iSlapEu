@@ -142,3 +142,11 @@ h2 span.reason-helper {
 	width: 240px;
 	padding: 0 5px;
 }
+
+#player-container {
+z-index: 10;
+}
+
+#audioplayer_1 {
+z-index: 15;
+}
