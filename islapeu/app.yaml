@@ -1,5 +1,5 @@
 application: islapeu
-version: RC1
+version: rc1
 runtime: python
 api_version: 1
 
