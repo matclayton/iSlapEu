@@ -9,7 +9,6 @@ from slap.counter import *
 import logging
 import twitter
 
-
 def home(request):     
     form = FullSlapForm(data=request.POST or None, request=request)
     if request.method == 'POST' and form.is_valid():
@@ -43,7 +42,12 @@ def slap(request, username):
         if not request.session.get('username',False):
             request.session['username'] = request.POST['slaper']
             request.session['password'] = request.POST['password']
-             
+            
+            
+    api=twitter.Api()
+    user = api.GetUser(username)
+    slapee_image_url = user.profile_image_url
+           
     page_size = settings.SLAPS_PER_PAGE
     next = None
     slaps = Slap.all().order("-created_at").filter('slapee ==', username).fetch(page_size+1)
@@ -53,7 +57,7 @@ def slap(request, username):
         
     slap_count = get_count('total') 
     slapee_count = get_count('slaps_received_%s' % username)
-    return render_to_response('slap.html', {'form' : form, 'username':username, 'slaps':slaps, 'slap_count': slap_count, 'slapee_count': slapee_count } , context_instance=RequestContext(request))
+    return render_to_response('slap.html', {'form' : form, 'username':username, 'slapee_image_url': slapee_image_url , 'slaps':slaps, 'slap_count': slap_count, 'slapee_count': slapee_count } , context_instance=RequestContext(request))
 
 def about(request):
     return render_to_response('about.html', context_instance=RequestContext(request))

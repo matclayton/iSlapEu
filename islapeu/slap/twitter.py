@@ -910,7 +910,8 @@ class Api(object):
       >>> api.CreateFriendship(user)
   '''
 
-  DEFAULT_CACHE_TIMEOUT = 60 # cache for 1 minute
+  #DEFAULT_CACHE_TIMEOUT = 60 # cache for 1 minute
+  DEFAULT_CACHE_TIMEOUT = 1800
 
   _API_REALM = 'Twitter API'
 
@@ -936,11 +937,11 @@ class Api(object):
     self._input_encoding = input_encoding
     self.SetCredentials(username, password)
     
-  def VerifyCredentials(self):
+  def VerifyCredentials(self, no_cache=True):
         import logging
         url = 'http://twitter.com/account/verify_credentials.json'
         try:
-            json = self._FetchUrl(url, post_data={}, no_cache=True)
+            json = self._FetchUrl(url, post_data={}, no_cache=no_cache)
             data = simplejson.loads(json)
             logging.info('%s' % data)
             if 'error' in data:

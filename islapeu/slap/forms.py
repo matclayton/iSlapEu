@@ -26,16 +26,18 @@ class FullSlapForm(djangoforms.ModelForm):
     def clean(self):   
         # Set old credentials are if in the session 
         if self.request.session.get('username', False):
-            self.cleaned_data['slaper'] = self.request.session.get('username')
-            self.cleaned_data['password'] = self.request.session.get('password')
-            
-        username = self.cleaned_data.get('slaper')
-        password = self.cleaned_data.get('password')
-            
-        api=twitter.Api(username=username, password=password)    
-        verify = api.VerifyCredentials()     
+            username = self.cleaned_data['slaper'] = self.request.session.get('username')
+            password = self.cleaned_data['password'] = self.request.session.get('password')
+            api=twitter.Api(username=username, password=password)
+            verify = api.VerifyCredentials(no_cache=False)
+        else:
+            username = self.cleaned_data.get('slaper')
+            password = self.cleaned_data.get('password')
+            api=twitter.Api(username=username, password=password)               
+            verify = api.VerifyCredentials()     
+        
         if verify: 
-            status = api.PostUpdate('2')
+            status = api.PostUpdate('Testing....')
             self.cleaned_data['slaper_image_url'] = verify['profile_image_url']
         else:
             raise forms.ValidationError('Invalid Username and Password')
