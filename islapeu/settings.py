@@ -20,7 +20,7 @@ SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 
 import os
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -101,6 +101,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.media',  # 0.97 only.
     'django.core.context_processors.request',
 )
+
+CACHE_BACKEND = 'memcached://'
 
 ROOT_URLCONF = 'urls'
 
