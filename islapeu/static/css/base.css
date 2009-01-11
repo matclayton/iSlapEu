@@ -33,6 +33,14 @@ input:visited { outline: none; }
 	height: auto;
 }
 
+.slap-count {
+	font-weight: bold;
+	color: #323131;	
+	font-size: 35px;
+	letter-spacing: -1px;
+	margin: -40px 0 20px 0;
+}
+
 .left-col {
 	float: left;
 	width: 500px;
