@@ -935,6 +935,20 @@ class Api(object):
     self._InitializeDefaultParameters()
     self._input_encoding = input_encoding
     self.SetCredentials(username, password)
+    
+  def VerifyCredentials(self):
+        import logging
+        url = 'http://twitter.com/account/verify_credentials.json'
+        try:
+            json = self._FetchUrl(url, post_data={}, no_cache=True)
+            data = simplejson.loads(json)
+            logging.info('%s' % data)
+            if 'error' in data:
+                return False
+            else: 
+                return data
+        except:
+            return False 
 
   def GetPublicTimeline(self, since_id=None):
     '''Fetch the sequnce of public twitter.Status message for all users.

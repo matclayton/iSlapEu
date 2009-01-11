@@ -11,6 +11,8 @@ class User(BaseModel):
 class Slap(BaseModel):
     slaper = db.StringProperty(multiline=False, required=True)
     slapee = db.StringProperty(multiline=False, required=True)
+    
+    slaper_image_url = db.StringProperty()
 
     reason = db.StringProperty(multiline=True)
 

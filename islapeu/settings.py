@@ -16,7 +16,7 @@
 
 SLAPS_PER_PAGE = 10
 
-SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 
 import os
 
@@ -104,6 +104,6 @@ INSTALLED_APPS = (
      'django.contrib.auth',
      'slap',
 #    'django.contrib.contenttypes',
-    'django.contrib.sessions',
+     'django.contrib.sessions',
 #    'django.contrib.sites',
 )

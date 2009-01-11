@@ -18,18 +18,22 @@ class FullSlapForm(djangoforms.ModelForm):
     password = forms.CharField(widget=forms.widgets.PasswordInput())
     
     def clean(self):
-        cleaned_data = self.cleaned_data
+        cleaned_data = self.cleaned_data   
+        
         username = self.cleaned_data.get('slaper')
         password = self.cleaned_data.get('password')
         
-        try:
-            api = twitter.Api(username=username, password=password)  
-            status = api.PostUpdate('Still hacking away on App')
-        except:
+        api=twitter.Api(username=username, password=password)
+        verify = api.VerifyCredentials()
+            
+        if verify: 
+            status = api.PostUpdate('Sorted!')
+            self.cleaned_data['slaper_image_url'] = verify['profile_image_url']
+        else:
             raise forms.ValidationError('Invalid Username and Password')
-        
+                
         return cleaned_data
               
     class Meta:
         model = Slap
-        exclude = ['created_at', 'modified_at']
+        exclude = ['created_at', 'modified_at', 'slapee_image_url', 'slaper_image_url']

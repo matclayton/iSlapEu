@@ -16,12 +16,14 @@ def home(request):
     return render_to_response('home.html', {'form' : form } , context_instance=RequestContext(request))
 
 def slap(request, username):
+    request.session['foo'] = 'bar'
     
     api = twitter.Api()
     user = api.GetUser(username)
     
     form = UserSlapForm(data=request.POST or None)
-    if request.method == 'POST' and form.is_valid():     
+    if request.method == 'POST' and form.is_valid():
+        
         slap = form.save(commit=False)
         slap.slapee = username
         slap.put()
