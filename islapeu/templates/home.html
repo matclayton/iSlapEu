@@ -4,7 +4,7 @@
 
 	<script type="text/javascript">  
 		AudioPlayer.setup("../static/swf/audioplayer.swf", {  
-		width: 400,
+		width: 0,
 		});
 	</script>
 	
@@ -14,15 +14,15 @@
 		
 		$("#bird-btn").click(function() {
 			AudioPlayer.embed("audioplayer_1", {  
-				soundFile: "/static/mp3/yep.mp3",  
+				soundFile: "/static/mp3/islapeu.mp3",  
 				autostart: "yes",
 			});
 			
-			$(this).delay(8000,function() {
+			$(this).delay(1800,function() {
 				$("#homepage-form").submit();
 			});
 		});
-		
+	});
 	</script>
 
 {% endblock extrahead %}
@@ -34,11 +34,14 @@
 
 <form id="homepage-form" action="" method='POST'>
 	<div class="left-col">
+		
+		<h2 class="welcome">Hello <span class="name">John</span>, back for some more slapping eh? 		
+		 <span class="logout-text">Or <a href="#" class="logout">log out</a> like a wuss</span></h2>
 		<h2>I want to slap</h2>
 		{{ form.slapee }}
 		{{ form.slapee.errors }}
 		
-		<h2>Because... <span class="reason-helper">up to 160 characters</span></h2>
+		<h2>Because... <span class="reason-helper">up to 140 characters</span></h2>
 		{{ form.reason }}
 
 		<div class="username-left-col">
@@ -52,15 +55,18 @@
 		{{ form.password }}
 		</div>	
 
+		<div id="player-container">	
+			<p id="audioplayer_1"></p> 
+		</div> 
+	
 	</div>
 	<div class="right-col">
 		<input type="submit" value"" id="slaphiddensubmit" />
-		<a href="" id="bird-btn"></a>
+		<a href="#" id="bird-btn"></a>
 	</div>
 </form>	
 
-<div id="player-container">	
-	<p id="audioplayer_1"></p>  
-</div>  
+ 
+
 
 {% endblock maincontent %}
