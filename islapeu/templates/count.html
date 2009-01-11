@@ -1,9 +1,22 @@
 {% extends "base.html" %}
 
+{% block title %}| Slap Counter {% endblock %}
+
+{% block extrahead %}
+		<script type="text/javascript">
+		$(document).ready(function() {
+			var refreshId = setInterval(function() {
+     			$('#count').load('{% url count_ajax %}');
+			}, 3000);
+
+		});
+		</script>
+{% endblock %}
+
 {% block maincontent %}
 		
 		<div id="count">
-			<p>{% include "count_ajax.html" %} <br/>slaps</p>
+			{% include "count_ajax.html" %}
 		</div>
 
 {% endblock maincontent %}

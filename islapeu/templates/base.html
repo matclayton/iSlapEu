@@ -15,7 +15,8 @@
 		<script type="text/javascript" src="/static/js/audio-player.js"></script>  
 		<script type="text/javascript" src="/static/js/jquery.delay.js"></script>  
 		<script type="text/javascript" src="/static/js/jquery.form.js"></script> 
-						
+		
+	{% block extrahead %}			
 		<script type="text/javascript">  
 			AudioPlayer.setup("/static/swf/audioplayer.swf", {  
 			width: 0,
@@ -39,6 +40,7 @@
 			});
 		});
 		</script>
+	{% endblock extrahead %}
 	
 	</head>
 	<body>
