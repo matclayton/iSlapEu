@@ -11,7 +11,12 @@
 		 	<span class="logout-text">Or <a href="{% url logout %}" class="logout">log out</a> like a wuss</span></h2>
 		{% endif %}
 		
-		<img src="{{ slapee_image_url}}" alt="{{ username }}"/>
+		
+		{% if slapee_image_url %}
+			<img src="{{ slapee_image_url }}" alt="{{ username }}"/>
+		{% else %}
+			<img src="dummy.jpg" alt="{{ username }}"/>
+		{% endif %}
 		
 		<h2>I want to slap {{ username }}</h2>
 		
