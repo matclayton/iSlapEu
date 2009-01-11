@@ -4,6 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from slap.forms import FullSlapForm, UserSlapForm
 from slap.models import Slap
 from django.conf import settings
+from slap.counter import *
 import logging
 import twitter
 
@@ -12,18 +13,15 @@ def home(request):
     form = FullSlapForm(data=request.POST or None)
     if request.method == 'POST' and form.is_valid():
         form.save()
+        #Save Username and Password into Session
+        request.session['username'] = request.POST['slaper']
+        request.session['password'] = request.POST['password']
 
     return render_to_response('home.html', {'form' : form } , context_instance=RequestContext(request))
 
-def slap(request, username):
-    request.session['foo'] = 'bar'
-    
-    api = twitter.Api()
-    user = api.GetUser(username)
-    
+def slap(request, username):    
     form = UserSlapForm(data=request.POST or None)
     if request.method == 'POST' and form.is_valid():
-        
         slap = form.save(commit=False)
         slap.slapee = username
         slap.put()

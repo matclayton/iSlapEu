@@ -2,12 +2,7 @@ from django import forms
 from google.appengine.ext.db import djangoforms
 from slap.models import Slap 
 import twitter
-
-#class FullSlapForm(forms.Form):
- #   reason = forms.CharField(max_length=160)
-#    slaper = forms.CharField()
-#    slapee = forms.CharField()
-#    password = forms.CharField()
+import re
     
 class UserSlapForm(djangoforms.ModelForm):  
     class Meta:
@@ -16,6 +11,12 @@ class UserSlapForm(djangoforms.ModelForm):
     
 class FullSlapForm(djangoforms.ModelForm):  
     password = forms.CharField(widget=forms.widgets.PasswordInput())
+    
+    def clean_slapee(self):
+        data = self.cleaned_data['slapee']
+        if not re.match('^[a-zA-Z0-9_]+$', data):
+            raise forms.ValidationError('Not a valid Twitter Username')
+        return data
     
     def clean(self):
         cleaned_data = self.cleaned_data   

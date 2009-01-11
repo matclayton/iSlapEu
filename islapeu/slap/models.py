@@ -1,14 +1,16 @@
 from appengine_django.models import BaseModel
 from google.appengine.ext import db
-
-class User(BaseModel):
-    username = db.StringProperty()
-    password = db.StringProperty()
-    
-    created_at = db.DateTimeProperty(auto_now_add=True)
-    modified_at = db.DateTimeProperty(auto_now=True)
+from counter import *
 
 class Slap(BaseModel):
+    
+    def put(self):
+        # Increment Sharded Counters
+        increment('total')
+        increment('slaps_given_%s' % self.slaper)
+        increment('slaps_received_%s' % self.slapee)
+        return super(Slap, self).save()
+    
     slaper = db.StringProperty(multiline=False, required=True)
     slapee = db.StringProperty(multiline=False, required=True)
     
