@@ -12,7 +12,7 @@ class Slap(BaseModel):
         return super(Slap, self).save()
     
     slaper = db.StringProperty(multiline=False)
-    slapee = db.StringProperty(multiline=False, required=True)
+    slapee = db.StringProperty(multiline=False)
     
     reason = db.StringProperty(multiline=True)  
     slaper_image_url = db.StringProperty()

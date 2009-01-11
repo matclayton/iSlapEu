@@ -8,12 +8,16 @@ import re
 class FullSlapForm(djangoforms.ModelForm):  
     password = forms.CharField(widget=forms.widgets.PasswordInput(), required=False)
     
-    def __init__(self, data, request):
+    def __init__(self, data, request, slapee=None):
         self.request = request
+        self.slapee = slapee
         return super(FullSlapForm, self).__init__(data)
     
     def clean_slapee(self):
-        data = self.cleaned_data['slapee']
+        if self.slapee:
+            data=self.slapee
+        else:
+            data = self.cleaned_data['slapee']
         if not re.match('^[a-zA-Z0-9_]+$', data):
             raise forms.ValidationError('Not a valid Twitter Username')
         return data

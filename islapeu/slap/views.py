@@ -32,7 +32,7 @@ def logout(request):
     return HttpResponseRedirect(reverse(home))  
 
 def slap(request, username):    
-    form = FullSlapForm(data=request.POST or None, request=request)
+    form = FullSlapForm(data=request.POST or None, request=request, slapee=username)
     if request.method == 'POST' and form.is_valid():
         slap = form.save(commit=False)
         slap.slapee = username
@@ -42,7 +42,9 @@ def slap(request, username):
         if not request.session.get('username',False):
             request.session['username'] = request.POST['slaper']
             request.session['password'] = request.POST['password']
-            
+        
+        #Load in Cleared form.
+        form = FullSlapForm(None, request=request)    
             
     api=twitter.Api()
     user = api.GetUser(username)
@@ -52,7 +54,7 @@ def slap(request, username):
     next = None
     slaps = Slap.all().order("-created_at").filter('slapee ==', username).fetch(page_size+1)
     if len(slaps) == page_size+1:
-        next = slaps[-1].when
+        next = slaps[-1].created_at
         slaps = slaps[:page_size]
         
     slap_count = get_count('total') 
