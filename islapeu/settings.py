@@ -20,7 +20,7 @@ SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 
 import os
 
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (

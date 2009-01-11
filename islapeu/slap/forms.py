@@ -22,6 +22,12 @@ class FullSlapForm(djangoforms.ModelForm):
             raise forms.ValidationError('Not a valid Twitter Username')
         return data
     
+    def clean_reason(self):
+        data = self.cleaned_data['reason']
+        if len(data)>140:
+            raise forms.ValidationError('Must not exceed 140 characters')
+        return data
+    
     def clean(self):   
         # Set old credentials are if in the session 
         if self.request.session.get('username', False):

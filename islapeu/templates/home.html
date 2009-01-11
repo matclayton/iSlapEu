@@ -23,6 +23,7 @@
 		
 		<h2>Because... <span class="reason-helper">up to 140 characters</span></h2>
 		{{ form.reason }}
+		{{ form.reason.errors }}
 
 		{% if not request.session.username %}	
 			<div class="username-left-col">
