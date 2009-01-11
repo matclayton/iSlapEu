@@ -41,13 +41,18 @@
 		{% endif %}	
 		
 		<div class="clearit"></div>
-		<h2 class="number-times"><a href="http://twitter.com/{{ username }}" class="user-link" target="_blank">{{ username }}</a> has been slapped <span class="name">{{ slapee_count }}</span> times</h2>
+		<h2 class="number-times"><a href="http://twitter.com/{{ username }}" class="user-link" target="_blank">{{ username }}</a> has been slapped <span class="name">{{ slapee_count }}</span> times by</h2>
 				
 		{% for slap in slaps %}
 			<div class="slap-row">
 				<div class="slapper-image"><a href="{% url slap slap.slaper %}"><img src="{{ slap.slaper_image_url }}" alt="{{ slap.slaper }}" /></a></div>
 				<div class="slap-row-rightcol">
-					<h2><a href="{% url slap slap.slaper %}" class="user-link"><span class="name">{{ slap.slaper }}</span></a> {% if slap.reason %}because{% endif %}</h2>
+					<h2><a href="{% url slap slap.slaper %}" class="user-link"><span class="name">{{ slap.slaper }}</span></a> {% if slap.reason %}because...{% endif %}</h2>
+					<div class="slapback">
+						{% ifequal request.session.username username %}
+							<a href="{% url slap slap.slaper %}">SLAP BACK</a>
+						{% endifequal %}
+					</div>
 					{% if slap.reason %}
 						<p>{{ slap.reason }}</p>
 					{% endif %}
@@ -56,9 +61,6 @@
 				<div class="clearit"></div>
 			</div>		
 			
-			{% ifequal request.session.username username %}
-				<a href="{% url slap slap.slaper %}">Slap Back</a>
-			{% endifequal %}
 		{% endfor %}
 		
 	</div>

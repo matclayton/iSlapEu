@@ -224,7 +224,7 @@ h2 span.reason-helper {
 	width: 100px;
 	height: 30px;
 	display: block;
-	margin: 0 0 0 395px;
+	float: left;
 }
 
 .webticketing-logo {
@@ -232,7 +232,13 @@ h2 span.reason-helper {
 	width: 120px;
 	height: 30px;
 	display: block;
-	margin: -30px 0 0 505px;
+	float: right;
+}
+
+.footer-logos {
+	width: 230px;
+	height: 30px;
+	margin: 0 auto;
 }
 
 
@@ -307,6 +313,18 @@ p.slap-date {
 	margin: 0 0 0 140px;
 }
 
+.slapback a {
+	font-size: 18px;
+	color: #f731a1;
+	float: right;
+	font-weight: bolder;
+	margin: -20px 0 0 0;
+}
+
+.slapback a:hover {
+	text-decoration: underline;
+	color: #9d1b64;
+}
 
 /* COUNT PAGE */
 

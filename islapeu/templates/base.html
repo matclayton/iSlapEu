@@ -11,7 +11,6 @@
 		<link type="text/css" rel="stylesheet" href="/static/css/reset.css" />		
 		<link type="text/css" rel="stylesheet" href="/static/css/base.css" />
 		<script type="text/javascript" src="/static/js/jquery-1.2.6.js"></script>
-		<script type="text/javascript" src="/static/js/jquery.elastic.js"></script>
 		<script type="text/javascript" src="/static/js/audio-player.js"></script>  
 		<script type="text/javascript" src="/static/js/jquery.delay.js"></script>  
 		<script type="text/javascript" src="/static/js/jquery.form.js"></script> 
@@ -20,18 +19,17 @@
 		<script type="text/javascript">  
 			AudioPlayer.setup("/static/swf/audioplayer.swf", {  
 			width: 0,
-			height: 0,
+			height: 0
 			});
 		</script>
 		
 		<script type="text/javascript">
 		$(document).ready(function() {
-			$("#id_reason").elastic();
-			
+	
 			$("#bird-btn").click(function() {
 				AudioPlayer.embed("audioplayer_1", {  
 					soundFile: "/static/mp3/islapeu.mp3",  
-					autostart: "yes",
+					autostart: "yes"
 				});
 				
 				$(this).delay(2300,function() {
@@ -51,8 +49,10 @@
 		<div class="footer">
 			<p><a href="/" class="footer-link">Home</a> | <a href="/about/" class="footer-link">About</a> | <a href="/terms/" class="footer-link">Terms</a></p>
 			<p>Brought to you by</p>
-			<a href="http://www.mixcloud.com" class="mixcloud-logo"></a>
-			<a href="http://www.webticketing.net" class="webticketing-logo"></a>
+			<div class="footer-logos">
+				<a href="http://www.mixcloud.com" class="mixcloud-logo"></a>
+				<a href="http://www.webticketing.net" class="webticketing-logo"></a>
+			</div>
 		</div>
 		</div>
 		<script type="text/javascript">var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));</script>
