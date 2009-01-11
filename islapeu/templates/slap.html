@@ -49,9 +49,7 @@
 				<div class="slap-row-rightcol">
 					<h2><a href="{% url slap slap.slaper %}" class="user-link"><span class="name">{{ slap.slaper }}</span></a> {% if slap.reason %}because...{% endif %}</h2>
 					<div class="slapback">
-						{% ifequal request.session.username username %}
-							<a href="{% url slap slap.slaper %}">SLAP BACK</a>
-						{% endifequal %}
+						<a href="{% url slap slap.slaper %}">SLAP BACK</a>
 					</div>
 					{% if slap.reason %}
 						<p>{{ slap.reason }}</p>
