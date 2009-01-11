@@ -5,6 +5,7 @@
 	<script type="text/javascript">  
 		AudioPlayer.setup("../static/swf/audioplayer.swf", {  
 		width: 0,
+		height: 0,
 		});
 	</script>
 	
@@ -19,7 +20,7 @@
 			});
 			
 			$(this).delay(1800,function() {
-				$("#homepage-form").submit();
+				$("#slap-form").submit();
 			});
 		});
 	});
@@ -32,7 +33,7 @@
 
 <h1>I Slap eU!</h1>
 
-<form id="homepage-form" action="" method='POST'>
+<form id="slap-form" action="" method='POST'>
 	<div class="left-col">
 		{% if request.session.username %}
 			<h2 class="welcome">Hello <span class="name">{{ request.session.username }}</span>, back for some more slapping eh? 		
@@ -58,18 +59,17 @@
 			</div>	
 		{% endif %}
 	
-		<div id="player-container">	
-			<p id="audioplayer_1"></p> 
-		</div> 
-	
 	</div>
 	<div class="right-col">
 		<input type="submit" value"" id="slaphiddensubmit" />
 		<a href="#" id="bird-btn"></a>
+		<div id="player-container">	
+			<p id="audioplayer_1"></p> 
+		</div> 
 	</div>
 </form>	
 
- 
+ <div class="clearit"></div>
 
 
 {% endblock maincontent %}

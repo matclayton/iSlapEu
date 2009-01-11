@@ -84,7 +84,6 @@ h1 {
 h2 {
 	font-weight: bold;
 	color: #0b78c2;
-	margin-bottom: -10px;
 }
 
 h2.welcome {
@@ -100,7 +99,7 @@ input {
 	border: none;
 	height: 30px;
 	width: 500px;
-	margin: 13px 0 20px 0px;
+	margin: 0px 0 20px 0px;
 	font-size: 26px;
 	font-weight: bold;
 	font-family: Georgia, Arial;
@@ -112,7 +111,7 @@ input {
 	font-size: 14px;
 	color: red;
 	font-weight: bold;
-	margin: -15px 0 10px 0;
+	margin: -15px 0 40px 0;
 }
 
 #id_slapee {
@@ -131,7 +130,7 @@ h2 span.reason-helper {
 	border: none;
 	height: 30px;
 	width: 490px;
-	margin: 13px 0 20px 0px;
+	margin: 0px 0 20px 0px;
 	font-size: 26px;
 	font-weight: bold;
 	font-family: Georgia, Arial;
@@ -156,7 +155,7 @@ h2 span.reason-helper {
 }
 
 #player-container {
-	margin: 0 0 0 -9999px;
+	margin: -100px 0 0 -9999px;
 }
 
 .logout-text {
@@ -175,12 +174,13 @@ h2 span.reason-helper {
 /* FOOTER */
 
 .footer {
-	position: fixed;
-	bottom: 0;
 	font-size: 16px;
 	font-weight: bold;
 	text-align: center;
-	width: 400px;
+	width: 1000px;
+	line-height: 20px;
+	color: #ccc;
+	margin: 200px 0 0 0;
 }
 
 .footer a {
@@ -188,3 +188,70 @@ h2 span.reason-helper {
 	text-decoration: none;
 }
 
+.footer a:hover {
+	color: gray;
+	text-decoration: underline;
+}
+
+.mixcloud-logo {
+	background: url(../images/mixcloud-logo.png) no-repeat top left;
+	width: 100px;
+	height: 30px;
+	display: block;
+	margin: 0 0 0 395px;
+}
+
+.webticketing-logo {
+	background: url(../images/webticketing-logo.png) no-repeat top left;
+	width: 120px;
+	height: 30px;
+	display: block;
+	margin: -30px 0 0 505px;
+}
+
+
+/* ABOUT AND TERMS */
+
+h3 {
+	font-size: 30px;
+	line-height: 35px;
+	font-weight: bold;
+}
+
+h4 {
+	font-size: 26px;
+	line-height: 28px;
+	font-weight: bold;
+	margin: 30px 0 0 0;
+}
+
+/* SLAP PAGE */
+
+.slap-row {
+	width: 490px;
+	padding: 5px;
+	background: #f2efef;
+	display: block;
+	border-top: 1px solid #d3d1d1;
+}
+
+.slap-row h2 {
+	background: yellow;
+	margin: 0 0 0 5px;
+}
+
+.number-times {
+	padding: 0 0 15px 0;
+}
+
+.slap-row p {
+	padding: 5px 5px 5px 52px;
+	font-size: 16px;
+}
+
+.slapper-image {
+	width: 48px;
+	height: 48px;
+	background: green;
+	float: left;
+}

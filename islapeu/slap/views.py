@@ -44,7 +44,7 @@ def slap(request, username):
         next = slaps[-1].when
         slaps = slaps[:page_size]
 
-    return render_to_response('slap.html', {'form' : form, 'slaps':slaps, 'user':user } , context_instance=RequestContext(request))
+    return render_to_response('slap.html', {'form' : form, 'slaps':slaps } , context_instance=RequestContext(request))
 
 def about(request):
     return render_to_response('about.html', context_instance=RequestContext(request))

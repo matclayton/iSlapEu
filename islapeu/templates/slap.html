@@ -2,21 +2,66 @@
 
 {% block maincontent %}
 
-<img src='{{ user.GetProfileImageUrl}}'/>
+<h1>I Slap eU!</h1>
 
-<form action='' method='POST'>
-	{{ form.slaper.errors }}
-	Slaper: {{ form.slaper }}<br/>
+<form id="slap-form" action="" method='POST'>
+	<div class="left-col">
+		
+		<h2 class="welcome">Hello <span class="name">John</span>, back for some more slapping eh? 		
+		 <span class="logout-text">Or <a href="#" class="logout">log out</a> like a wuss</span></h2>
+		<h2>I want to slap {{ request.username }}</h2>
+		
+		<h2>Because... <span class="reason-helper">up to 140 characters</span></h2>
+		{{ form.reason }}
+
+		<div class="username-left-col">
+		<h2>Twitter username</h2>
+		{{ form.slaper }}
+		{{ form.non_field_errors }}
+		</div>
+		
+		<div class="password-right-col">
+		<h2>Twitter password</h2>
+		{{ form.password }}
+		</div>	
+		
+		<div class="clearit"></div>
+		<h2 class="number-times">Jack has been slapped <span class="name">34234</span> times by</h2>
+		
+		<div class="slap-row">
+			<div class="slapper-image"></div>
+			<h2><span class="name">John</span> because</h2>
+			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing</p>
+		</div>
+		<div class="slap-row">
+			<h2><span class="name">John</span> because</h2>
+			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing</p>
+		</div>
+		<div class="slap-row">
+			<h2><span class="name">John</span> because</h2>
+			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing</p>
+		</div>
+				
+		{% for slap in slaps %}
+			{{ slap.slaper }}
+			{{ slap.created_at }}
+			{{ slap.reason }}<br/>
+		{% endfor %}
+		
+		
 	
-	{{ form.reason.errors }}
-	Reason: {{ form.reason }}	
-	<input type='submit'/>
-</form>
+	</div>
+	<div class="right-col">
+		<input type="submit" value"" id="slaphiddensubmit" />
+		<a href="#" id="bird-btn"></a>
+		<div id="player-container">	
+			<p id="audioplayer_1"></p> 
+		</div>
+	</div>
+</form>	
 
-{% for slap in slaps %}
-	{{ slap.slaper }}
-	{{ slap.created_at }}
-	{{ slap.reason }}<br/>
-{% endfor %}
+ <div class="clearit"></div>
+ 
+ 
 
 {% endblock maincontent %}
