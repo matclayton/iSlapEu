@@ -16,7 +16,29 @@
 		<script type="text/javascript" src="../static/js/jquery.delay.js"></script>  
 		<script type="text/javascript" src="../static/js/jquery.form.js"></script> 
 						
-		{% block extrahead %}{% endblock extrahead %}
+		<script type="text/javascript">  
+			AudioPlayer.setup("../static/swf/audioplayer.swf", {  
+			width: 0,
+			height: 0,
+			});
+		</script>
+		
+		<script type="text/javascript">
+		$(document).ready(function() {
+			$("#id_reason").elastic();
+			
+			$("#bird-btn").click(function() {
+				AudioPlayer.embed("audioplayer_1", {  
+					soundFile: "/static/mp3/islapeu.mp3",  
+					autostart: "yes",
+				});
+				
+				$(this).delay(1800,function() {
+					$("#slap-form").submit();
+				});
+			});
+		});
+		</script>
 	
 	</head>
 	<body>

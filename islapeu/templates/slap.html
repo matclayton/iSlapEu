@@ -6,24 +6,28 @@
 
 <form id="slap-form" action="" method='POST'>
 	<div class="left-col">
-		
-		<h2 class="welcome">Hello <span class="name">John</span>, back for some more slapping eh? 		
-		 <span class="logout-text">Or <a href="#" class="logout">log out</a> like a wuss</span></h2>
+		{% if request.session.username %}
+			<h2 class="welcome">Hello <span class="name">{{ request.session.username }}</span>, back for some more slapping eh? 		
+		 	<span class="logout-text">Or <a href="{% url logout %}" class="logout">log out</a> like a wuss</span></h2>
+		{% endif %}
 		<h2>I want to slap {{ request.username }}</h2>
 		
 		<h2>Because... <span class="reason-helper">up to 140 characters</span></h2>
 		{{ form.reason }}
 
-		<div class="username-left-col">
-		<h2>Twitter username</h2>
-		{{ form.slaper }}
-		{{ form.non_field_errors }}
-		</div>
-		
-		<div class="password-right-col">
-		<h2>Twitter password</h2>
-		{{ form.password }}
-		</div>	
+
+		{% if not request.session.username %}	
+			<div class="username-left-col">
+			<h2>Twitter username</h2>
+			{{ form.slaper }}
+			{{ form.non_field_errors }}
+			</div>
+			
+			<div class="">
+			<h2>Twitter password</h2>
+			{{ form.password }}
+			</div>	
+		{% endif %}	
 		
 		<div class="clearit"></div>
 		<h2 class="number-times">Jack has been slapped <span class="name">34234</span> times by</h2>

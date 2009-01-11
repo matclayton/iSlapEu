@@ -1,37 +1,10 @@
 {% extends "base.html" %}
 
-{% block extrahead %}
-
-	<script type="text/javascript">  
-		AudioPlayer.setup("../static/swf/audioplayer.swf", {  
-		width: 0,
-		height: 0,
-		});
-	</script>
-	
-	<script type="text/javascript">
-	$(document).ready(function() {
-		$("#id_reason").elastic();
-		
-		$("#bird-btn").click(function() {
-			AudioPlayer.embed("audioplayer_1", {  
-				soundFile: "/static/mp3/islapeu.mp3",  
-				autostart: "yes",
-			});
-			
-			$(this).delay(1800,function() {
-				$("#slap-form").submit();
-			});
-		});
-	});
-	</script>
-
-{% endblock extrahead %}
-
-		
 {% block maincontent %}
 
 <h1>I Slap eU!</h1>
+
+{{ slap_count }}
 
 <form id="slap-form" action="" method='POST'>
 	<div class="left-col">
@@ -61,7 +34,7 @@
 	
 	</div>
 	<div class="right-col">
-		<input type="submit" value"" id="slaphiddensubmit" />
+		<input type="submit" value="" id="slaphiddensubmit" />
 		<a href="#" id="bird-btn"></a>
 		<div id="player-container">	
 			<p id="audioplayer_1"></p> 

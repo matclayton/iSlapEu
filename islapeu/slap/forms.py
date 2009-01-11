@@ -39,7 +39,6 @@ class FullSlapForm(djangoforms.ModelForm):
             self.cleaned_data['slaper_image_url'] = verify['profile_image_url']
         else:
             raise forms.ValidationError('Invalid Username and Password')
-        logging.error(self.cleaned_data)
         return self.cleaned_data
               
     class Meta:
