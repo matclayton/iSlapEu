@@ -36,6 +36,16 @@ DATABASE_PASSWORD = ''         # Not used with sqlite3.
 DATABASE_HOST = ''             # Set to empty string for localhost. Not used with sqlite3.
 DATABASE_PORT = ''             # Set to empty string for default. Not used with sqlite3.
 
+# Email settings for sending outgoing email, very useful for debug information
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'team@islap.eu'
+EMAIL_HOST_PASSWORD = 'withabigfish'
+EMAIL_PORT = 587
+EMAIL_SUBJECT_PREFIX = '[islap.eu] '
+EMAIL_USE_TLS = True
+SERVER_EMAIL = EMAIL_HOST_USER
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
