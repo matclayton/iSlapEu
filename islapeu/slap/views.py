@@ -18,6 +18,8 @@ def home(request):
         if not request.session.get('username',False):
             request.session['username'] = request.POST['slaper']
             request.session['password'] = request.POST['password']
+            
+        return HttpResponseRedirect(reverse(slap, args=[request.POST['slapee']]))
 
     slap_count = get_count('total') 
     return render_to_response('home.html', {'form' : form, 'slap_count': slap_count } , context_instance=RequestContext(request))
@@ -50,7 +52,8 @@ def slap(request, username):
         slaps = slaps[:page_size]
         
     slap_count = get_count('total') 
-    return render_to_response('slap.html', {'form' : form, 'slaps':slaps, 'slap_count': slap_count } , context_instance=RequestContext(request))
+    slapee_count = get_count('slaps_received_%s' % username)
+    return render_to_response('slap.html', {'form' : form, 'username':username, 'slaps':slaps, 'slap_count': slap_count, 'slapee_count': slapee_count } , context_instance=RequestContext(request))
 
 def about(request):
     return render_to_response('about.html', context_instance=RequestContext(request))

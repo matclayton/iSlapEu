@@ -6,10 +6,10 @@
 
 {{ slap_count }}
 
-<form id="slap-form" action="" method='POST'>
+<form id="slap-form" action="" method="post">
 	<div class="left-col">
 		{% if request.session.username %}
-			<h2 class="welcome">Hello <span class="name">{{ request.session.username }}</span>, back for some more slapping eh? 		
+			<h2 class="welcome">Hello <a href="{% url slap request.session.username %}"><span class="name">{{ request.session.username }}</span></a>, back for some more slapping eh? 		
 		 	<span class="logout-text">Or <a href="{% url logout %}" class="logout">log out</a> like a wuss</span></h2>
 		{% endif %}
 		<h2>I want to slap</h2>
