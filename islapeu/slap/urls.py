@@ -23,5 +23,6 @@ urlpatterns = patterns('',
     url(r'^logout/$', logout, name='logout' ),
     url(r'^count/$', count, name='count' ),
     url(r'^count_ajax/$', count_ajax, name='count_ajax' ),
+    url(r'^testerror/$', error, name='error' ),
     url(r'^(?P<username>[-\w]+)/$', slap, name='slap' ),
 )

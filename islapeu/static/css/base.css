@@ -300,7 +300,7 @@ p.slap-date {
 
 .ads {
 	width: 300px;
-	margin: 0 0 0 130px;
+	margin: 0 0 0 140px;
 }
 
 
@@ -314,5 +314,17 @@ p.slap-date {
 	padding: 100px 0 0 0;
 	letter-spacing: -7px;
 	line-height: 230px;
+}
+
+/* ERROR PAGES */
+
+#error p {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 150px;
+	font-weight: bold;
+	text-align: center;
+	padding: 100px 0 0 0;
+	letter-spacing: -7px;
+	line-height: 150px;
 }
 

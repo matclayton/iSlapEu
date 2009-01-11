@@ -74,3 +74,7 @@ def count_ajax(request):
 
 def terms(request):
     return render_to_response('terms.html', context_instance=RequestContext(request))
+
+def error(request):
+    error = 1/0
+    return render_to_response('terms.html', context_instance=RequestContext(request))
