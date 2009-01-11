@@ -105,5 +105,6 @@ INSTALLED_APPS = (
      'slap',
 #    'django.contrib.contenttypes',
      'django.contrib.sessions',
+     'django.contrib.humanize',
 #    'django.contrib.sites',
 )

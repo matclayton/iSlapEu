@@ -5,11 +5,6 @@ import twitter
 import logging
 import re
     
-class UserSlapForm(djangoforms.ModelForm):  
-    class Meta:
-        model = Slap
-        exclude = ['created_at', 'slapee']
-    
 class FullSlapForm(djangoforms.ModelForm):  
     password = forms.CharField(widget=forms.widgets.PasswordInput(), required=False)
     

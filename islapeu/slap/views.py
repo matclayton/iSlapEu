@@ -2,7 +2,7 @@ from django.template import RequestContext
 from django.shortcuts import render_to_response
 from django.core.urlresolvers import reverse
 from django.http import HttpResponse, HttpResponseRedirect
-from slap.forms import FullSlapForm, UserSlapForm
+from slap.forms import FullSlapForm
 from slap.models import Slap
 from django.conf import settings
 from slap.counter import *
@@ -61,6 +61,14 @@ def slap(request, username):
 
 def about(request):
     return render_to_response('about.html', context_instance=RequestContext(request))
+
+def count(request):
+    slap_count = get_count('total')
+    return render_to_response('count.html', {'slap_count' : slap_count }, context_instance=RequestContext(request))
+
+def count_ajax(request):
+    slap_count = get_count('total')
+    return render_to_response('count_ajax.html', {'slap_count' : slap_count })
 
 def terms(request):
     return render_to_response('terms.html', context_instance=RequestContext(request))
