@@ -15,7 +15,11 @@ body {
 	margin: 0 auto;
 }
 
-a { outline:none; }
+a { 
+outline:none; 
+text-decoration: none;
+}
+
 a:focus { outline: none; }
 a:active { outline: none; }
 a:visited { outline: none; }
@@ -33,7 +37,7 @@ input:visited { outline: none; }
 	height: auto;
 }
 
-.slap-count {
+.total-slap-count {
 	font-weight: bold;
 	color: #323131;	
 	font-size: 35px;
@@ -100,6 +104,15 @@ h2.welcome {
 
 span.name {
 	color: #153464;
+}
+
+.user-link {
+	color: #153464;		
+}
+
+.user-link:hover {
+	color: #051d43;	
+	text-decoration: underline;	
 }
 
 input {
@@ -178,6 +191,11 @@ h2 span.reason-helper {
 	color: #ccc;
 }
 
+.logout:hover {
+	text-decoration: underline;
+	color: #999;
+}
+
 
 /* FOOTER */
 
@@ -235,6 +253,12 @@ h4 {
 
 /* SLAP PAGE */
 
+.slapee-image {
+	float: left;
+	height: 50px;
+	width: 50px;
+}
+
 .slap-row {
 	width: 490px;
 	padding: 5px;
@@ -248,12 +272,18 @@ h4 {
 }
 
 .number-times {
-	padding: 0 0 15px 0;
+	padding: 0 0 10px 0;
 }
 
 .slap-row p {
-	padding: 5px 10px 5px 10px;
+	padding: 3px 10px 0px 10px;
 	font-size: 16px;
+}
+
+p.slap-date {
+	font-size: 12px;
+	color: #0b78c2;
+	font-weight: bold;
 }
 
 .slapper-image {
@@ -272,3 +302,4 @@ h4 {
 	width: 300px;
 	margin: 0 0 0 130px;
 }
+

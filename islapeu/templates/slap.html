@@ -7,18 +7,19 @@
 <form id="slap-form" action="" method="post">
 	<div class="left-col">
 		{% if request.session.username %}
-			<h2 class="welcome">Hello <a href="{% url slap request.session.username %}"><span class="name">{{ request.session.username }}</span></a>, back for some more slapping eh? 		
+			<h2 class="welcome">Hello <a href="{% url slap request.session.username %}" class="user-link">{{ request.session.username }}</a>, back for some more slapping eh? 		
 		 	<span class="logout-text">Or <a href="{% url logout %}" class="logout">log out</a> like a wuss</span></h2>
 		{% endif %}
 		
+		<div class="slapee-image">		
+			{% if slapee_image_url %}
+				<a href="http://twitter.com/{{ username }}"><img src="{{ slapee_image_url}}" alt="{{ username }}"/></a>
+			{% else %}
+				<img src="/static/images/default-bird.png" alt="{{ username }}"/>
+			{% endif %}
+		</div>
 		
-		{% if slapee_image_url %}
-			<img src="{{ slapee_image_url }}" alt="{{ username }}"/>
-		{% else %}
-			<img src="dummy.jpg" alt="{{ username }}"/>
-		{% endif %}
-		
-		<h2>I want to slap {{ username }}</h2>
+		<h2>I want to slap <a href="http://twitter.com/{{ username }}" class="user-link">{{ username }}</a></h2>
 		
 		<h2>Because... <span class="reason-helper">up to 140 characters</span></h2>
 		{{ form.reason }}
@@ -38,15 +39,15 @@
 		{% endif %}	
 		
 		<div class="clearit"></div>
-		<h2 class="number-times">{{ username }} has been slapped <span class="name">{{ slapee_count }}</span> times</h2>
+		<h2 class="number-times"><a href="http://twitter.com/{{ username }}" class="user-link">{{ username }}</a> has been slapped <span class="name">{{ slapee_count }}</span> times</h2>
 				
 		{% for slap in slaps %}
 			<div class="slap-row">
 				<div class="slapper-image"><a href="{% url slap slap.slaper %}"><img src="{{ slap.slaper_image_url }}" alt="{{ slap.slaper }}" /></a></div>
 				<div class="slap-row-rightcol">
-					<h2><a href="{% url slap slap.slaper %}"><span class="name">{{ slap.slaper }}</span></a> because</h2>
+					<h2><a href="{% url slap slap.slaper %}" class="user-link"><span class="name">{{ slap.slaper }}</span></a> because</h2>
 					<p>{{ slap.reason }}</p>
-					{{ slap.created_at|timesince }} ago
+					<p class="slap-date">{{ slap.created_at|timesince }} ago</p>
 				</div>
 				<div class="clearit"></div>
 			</div>		
