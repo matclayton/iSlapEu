@@ -303,3 +303,16 @@ p.slap-date {
 	margin: 0 0 0 130px;
 }
 
+
+/* COUNT PAGE */
+
+#count p {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 250px;
+	font-weight: bold;
+	text-align: center;
+	padding: 100px 0 0 0;
+	letter-spacing: -7px;
+	line-height: 230px;
+}
+

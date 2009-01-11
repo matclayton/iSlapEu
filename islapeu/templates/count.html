@@ -1,53 +1,9 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta content="en-us" http-equiv="Content-Language"/>
-		<meta content="I, Slap, eU, twitter, slap, slapping" name="Keywords"/>
-		<meta content="I Slap eU. You slap me. We all slap people on twitter for free" name="Description"/>
-		<link rel="icon" href="../static/images/favicon.png" type="image/png" />
-		<title>I Slap eU  {% block title %}{% endblock %}</title>
+{% extends "base.html" %}
 
-		<link type="text/css" rel="stylesheet" href="../static/css/reset.css" />		
-		<link type="text/css" rel="stylesheet" href="../static/css/base.css" />
-		<script type="text/javascript" src="../static/js/jquery-1.2.6.js"></script>
-		<script type="text/javascript" src="../static/js/jquery.elastic.js"></script>
-		<script type="text/javascript" src="../static/js/audio-player.js"></script>  
-		<script type="text/javascript" src="../static/js/jquery.delay.js"></script>  
-		<script type="text/javascript" src="../static/js/jquery.form.js"></script> 
-						
-		<script type="text/javascript">  
-			AudioPlayer.setup("../static/swf/audioplayer.swf", {  
-			width: 0,
-			height: 0,
-			});
-		</script>
-		
-		<script type="text/javascript">
-		$(document).ready(function() {
-			var refreshId = setInterval(function() {
-     			$('#count').load('{% url count_ajax %}');
-			}, 3000);
-
-		});
-		</script>
-	
-	</head>
-	<body>
-		<div class="wrapper">
+{% block maincontent %}
 		
 		<div id="count">
-			{% include "count_ajax.html" %}
+			<p>{% include "count_ajax.html" %} <br/>slaps</p>
 		</div>
-		
-		<div class="footer">
-			<p><a href="/" class="footer-link">Home</a> | <a href="/about/" class="footer-link">About</a> | <a href="/terms/" class="footer-link">Terms</a></p>
-			<p>Brought to you by</p>
-			<a href="http://www.mixcloud.com" class="mixcloud-logo"></a>
-			<a href="http://www.webticketing.net" class="webticketing-logo"></a>
-		</div>
-		</div>
-		<script type="text/javascript">var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));</script>
-		<script type="text/javascript">try {var pageTracker = _gat._getTracker("UA-6953689-1");pageTracker._trackPageview();} catch(err) {}</script>	
-	</body>
-</html>
+
+{% endblock maincontent %}
