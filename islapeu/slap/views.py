@@ -20,8 +20,11 @@ def home(request):
             
         return HttpResponseRedirect(reverse(slap, args=[request.POST['slapee']]))
 
+    page_size = settings.SLAPS_PER_PAGE
+    latest_slaps = Slap.all().order("-created_at").filter('reason !=', None).fetch(1)
+
     slap_count = get_count('total') 
-    return render_to_response('home.html', {'form' : form, 'slap_count': slap_count } , context_instance=RequestContext(request))
+    return render_to_response('home.html', {'form' : form, 'slap_count': slap_count, 'latest_slaps':latest_slaps } , context_instance=RequestContext(request))
 
 def logout(request):
     try:
@@ -71,6 +74,12 @@ def count(request):
 def count_ajax(request):
     slap_count = get_count('total')
     return render_to_response('count_ajax.html', {'slap_count' : slap_count })
+
+def latest_slap(requeat):
+    from django.core import serializers
+    latest_slap = Slap.all().order("-created_at").filter('reason !=', None).fetch(1)
+    data = serializers.serialize("json", latest_slap)
+    return data
 
 def terms(request):
     return render_to_response('terms.html', context_instance=RequestContext(request))
