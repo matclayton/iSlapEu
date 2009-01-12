@@ -44,6 +44,7 @@ class FullSlapForm(djangoforms.ModelForm):
         if verify: 
             slapee = self.cleaned_data.get('slapee')
             status = api.PostUpdate('TWITSLAPPED @%s - Find out why or slapback at http://www.islap.eu/%s/' % (slapee, slapee))
+            status = api.PostDirectMessage('TWITSLAPPED you - Find out why or slapback at http://www.islap.eu/%s/' % (slapee))
             self.cleaned_data['slaper_image_url'] = verify['profile_image_url']
         else:
             raise forms.ValidationError('Invalid Username and Password')
