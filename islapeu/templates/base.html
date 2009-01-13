@@ -14,6 +14,7 @@
 		<script type="text/javascript" src="/static/js/audio-player.js"></script>  
 		<script type="text/javascript" src="/static/js/jquery.delay.js"></script>  
 		<script type="text/javascript" src="/static/js/jquery.form.js"></script> 
+		<script type="text/javascript" src="/static/js/jquery.textCounting.min.js"></script> 
 		
 	{% block extrahead %}			
 		<script type="text/javascript">  
@@ -25,6 +26,8 @@
 		
 		<script type="text/javascript">
 		$(document).ready(function() {
+			
+			$(":input[type=textarea]").textCounting();
 	
 			$("#bird-btn").click(function() {
 				AudioPlayer.embed("audioplayer_1", {  
