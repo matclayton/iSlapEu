@@ -6,6 +6,7 @@ import logging
 import re
     
 class FullSlapForm(djangoforms.ModelForm):  
+    reason = forms.CharField(widget=forms.widgets.Textarea(attrs={'maxLength':'140'}))
     password = forms.CharField(widget=forms.widgets.PasswordInput(), required=False)
     
     def __init__(self, data, request, slapee=None):
