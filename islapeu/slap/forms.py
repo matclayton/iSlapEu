@@ -43,15 +43,16 @@ class FullSlapForm(djangoforms.ModelForm):
             verify = api.VerifyCredentials()     
         
         if verify: 
+            reason = self.cleaned_data.get('reason')            
             slapee = self.cleaned_data.get('slapee')
             msg = 'twitslapped @%s because %s - slap back at http://www.islap.eu/%s/' % (slapee, reason, slapee)
             if len(msg)>140:
-                msg = 'twitslapped @%s because %s... - slap back at http://www.islap.eu/%s/' % (slapee, reason[0:len(reason)-(len(msg)+3-140)], slapee)
+                msg = 'twitslapped @%s because %s... - slap back at http://www.islap.eu/%s/' % (slapee, reason[0:(len(reason)-(len(msg)+3-140))], slapee)
             status = api.PostUpdate(msg)
             
             msg = 'I just twitslapped you because %s - slap back at http://www.islap.eu/%s/' % (reason, slapee)
             if len(msg)>140:
-                msg = 'I just twitslapped you because %s... - slap back at http://www.islap.eu/%s/' % (reason[0:len(reason)-(len(msg)+3-140)], slapee)
+                msg = 'I just twitslapped you because %s... - slap back at http://www.islap.eu/%s/' % (reason[0:(len(reason)-(len(msg)+3-140))], slapee)
             status = api.PostDirectMessage(slapee, msg)
             
             self.cleaned_data['slaper_image_url'] = verify['profile_image_url']
